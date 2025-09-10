@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iluminus Películas</title>
+    <meta name="description" content="Venda e instalação de películas residenciais, automotivas e comerciais no RN. Qualidade, garantia e atendimento rápido." />
+
+    <!-- Fonte Google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", Arial, Helvetica, sans-serif;
+            background-color: #000;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #000;
+            text-align: center;
+        }
+
+        header img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: #000000f1;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .itens-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .itens-menu li {
+            margin: 5px 15px;
+        }
+
+        .itens-menu a {
+            color: rgb(245, 245, 245);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: inline-block;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .itens-menu a:hover {
+            background-color: #007afc;
+            border-radius: 5px;
+        }
+
+        .content {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #007BFF;
+            margin-bottom: 15px;
+        }
+
+        /* HERO */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 36px;
+            align-items: center;
+            padding: 60px 0;
+        }
+
+        .badge {
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            background: #000;
+            color: #a95000;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: .9rem;
+        }
+
+        .lead {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .hero-cards {
+            margin-top: 26px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            background: #111;
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 10px 30px rgba(38, 0, 255, 0.37);
+            text-align: center;
+        }
+
+        .card small {
+            color: #ccc;
+        }
+
+        .hero-pic .frame {
+            border-radius: 24px;
+            overflow: hidden;
+            width: 100%;
+            max-height: 400px;
+        }
+
+        .hero-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Produtos */
+        .produtos .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .produto {
+            background: #111;
+            border-radius: 18px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: space-between;
+        }
+
+        .produto img {
+            width: 100%;
+            max-height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .produto .comprar {
+            margin-top: 12px;
+            width: 80%;
+            max-width: 220px;
+        }
+
+        /* Botões */
+        .comprar, .whats {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .comprar {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        .comprar:hover {
+            filter: brightness(0.9);
+        }
+
+        .whats {
+            background-color: #25D366;
+            color: #fff;
+        }
+
+        .whats:hover {
+            filter: brightness(0.9);
+        }
+
+        /* Sobre */
+        .sobre {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 30px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .sobre img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Responsividade */
+        @media (max-width: 980px) {
+            .sobre {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .sobre img {
+                max-width: 80%;
+                margin: 20px auto 0 auto;
+            }
+
+            .hero, .sobre, .trabalhos .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-pic {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 780px) {
+            .itens-menu {
+                flex-direction: column;
+            }
+        }
+
+        /* Nossos Trabalhos */
+        .trabalhos .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .shot {
+            border-radius: 16px;
+            overflow: hidden;
+            max-height: 220px;
+        }
+
+        .shot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0a2a43;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BANNER -->
+    <header>
+        <img src="iluminusbannerazul.png" alt="Logo da empresa">
+    </header>
+
+    <!-- MENU -->
+    <nav>
+        <ul class="itens-menu">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#produtos">Películas</a></li>
+            <li><a href="#trabalhos">Nossos Trabalhos</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Fale Conosco</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero content" id="inicio">
+        <div>
+            <span class="badge">☀ Conforto térmico • Privacidade • Proteção UV</span>
+            <h1>Películas que protegem, valorizam e transformam seu espaço</h1>
+            <p class="lead">Instalação profissional de películas residenciais, automotivas e comerciais em todo o RN. Atendimento ágil, materiais premium e garantia real.</p>
+
+            <div class="hero-cards">
+                <div class="card"><strong>99% UV</strong><br><small>Bloqueio de raios UVA/UVB</small></div>
+                <div class="card"><strong>+ Conforto</strong><br><small>Redução de calor e brilho</small></div>
+                <div class="card"><strong>Privacidade</strong><br><small>Sem perder luminosidade</small></div>
+            </div>
+
+            <p style="margin-top:22px">
+                <a class="whats" href="#contato">💬 Pedir orçamento no WhatsApp</a>
+            </p>
+        </div>
+        <div class="hero-pic">
+            <div class="frame">
+                <img src="iluminusblack.png" alt="Aplicação de película em janela" />
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos" class="produtos content">
+        <h2 class="section-title">Nossas Películas</h2>
+        <p class="lead">Selecionamos linhas com alta performance, garantia e excelente acabamento.</p>
+        <div class="grid">
+            <article class="produto">
+                <img src="espelhadas.webp" alt="Película espelhadas" />
+                <h3>Espelhadas</h3>
+                <p>Privacidade durante o dia e forte redução de calor.</p>
+                <button class="comprar" onclick="enviarWhatsApp('olá! gostaria de fazer um orçamento com a película espelhada prateada')">Solicitar orçamento</button>
+            </article>
+
+            <article class="produto">
+                <img src="nano.jpg" alt="Película trasnparente" />
+                <h3>nano cerâmica</h3>
+                <p>Visual elegante com proteção UV de até 99%.</p>
+                <button class="comprar" onclick="enviarWhatsApp('olá! gostaria de fazer um orçamento com a película de nano cerâmica')">Solicitar orçamento</button>
+            </article>
+
+            <article class="produto">
+                <img src="fosca.webp" alt="Película jateada" />
+                <h3>Jateada / Fosca</h3>
+                <p>Privacidade com passagem de luz para escritórios e banheiros.</p>
+                <button class="comprar" onclick="enviarWhatsApp('olá! gostaria de fazer um orçamento com a película Jateada / Fosca')">Solicitar orçamento</button>
+            </article>
+
+            <article class="produto">
+                <img src="fumê.webp" alt="Película fumê" />
+                <h3>fumê 70% a blackout</h3>
+                <p>Pelicula perfeita para privacidadde e proteção solar, ideal para residências.</p>
+                <button class="comprar" onclick="enviarWhatsApp('olá! gostaria de fazer um orçamento com a película fumê')">Solicitar orçamento</button>
+            </article>
+        </div>
+    </section>
+
+    <!-- NOSSOS TRABALHOS -->
+    <section id="trabalhos" class="trabalhos content">
+        <h2 class="section-title">Nossos Trabalhos</h2>
+        <p class="lead">Alguns registros de instalações feitas pela equipe Iluminus.</p>
+        <div class="grid">
+            <div class="shot"><img src="trabalho,esp.jpg" alt="Vitrine com película"/></div>
+            <div class="shot"><img src="trabalho,esp2.jpg" alt="Residência com película"/></div>
+            <div class="shot"><img src="trabalho,jat.jpg" alt="Escritório com película"/></div>
+            <div class="shot"><img src="trabalho,fumê.jpg" alt="Close na instalação"/></div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="content sobre">
+        <div>
+            <h2>Sobre nós</h2>
+            <p>A <strong>Iluminus Películas</strong> oferece películas automotivas e residenciais de alta qualidade, garantindo proteção, privacidade e estilo. Trabalhamos com materiais de primeira linha e instaladores experientes para entregar o melhor resultado para nossos clientes.</p>
+        </div>
+        <div>
+            <img src="iluminusblack.png" alt="Foto Iluminus Películas">
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="content">
+        <h2 class="section-title">Fale Conosco</h2>
+        <p class="lead">Entre em contato para solicitar orçamento ou tirar dúvidas.</p>
+        <a class="whats" href="https://wa.me/5584998324092?text=Olá!%20Quero%20um%20orçamento." target="_blank">💬 WhatsApp</a>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        &copy; 2025 Iluminus Películas & CodeNext - Todos os direitos reservados.
+    </footer>
+
+    <!-- SCRIPT PARA WHATSAPP -->
+    <script>
+        function enviarWhatsApp(mensagem) {
+            const numero = "5584998324092";
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, "_blank");
+        }
+    </script>
+
+</body>
+</html>

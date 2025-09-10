@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iluminus Películas</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #0a0a0a;
+            padding: 15px 0;
+            border-bottom: 3px solid #00aaff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        .itens-menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .itens-menu a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .itens-menu a:hover {
+            background-color: #00aaff;
+            color: #000;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        section.sobre {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        section.sobre div {
+            flex: 1;
+        }
+
+        section.sobre img {
+            max-width: 100%;
+            border-radius: 10px;
+            border: 3px solid #00aaff;
+        }
+
+        h1 {
+            color: #00aaff;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0a0a0a;
+            border-top: 3px solid #00aaff;
+            color: #ccc;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="A_logo_for_\"Iluminus_Películas,\"_a_company_likely_.png" alt="Logo Iluminus Películas">
+            </div>
+            <ul class="itens-menu">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Películas</a></li>
+                <li><a href="#">Nossos Trabalhos</a></li>
+                <li><a href="#">Fale Conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="sobre">
+            <div>
+                <h1>Sobre nós</h1>
+                <p>A <strong>Iluminus Películas</strong> oferece películas automotivas e residenciais de alta qualidade, garantindo proteção, privacidade e estilo. Trabalhamos com materiais de primeira linha e instaladores experientes para entregar o melhor resultado para nossos clientes.</p>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/500x300.png?text=Imagem+da+Empresa" alt="Foto Iluminus Películas">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Iluminus Películas - Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>

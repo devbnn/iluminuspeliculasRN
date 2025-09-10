@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iluminus Películas | Proteção e Estilo</title>
+  <meta name="description" content="Venda e instalação de películas residenciais, automotivas e comerciais no RN. Qualidade, garantia e atendimento rápido." />
+
+  <!-- Fonte Google -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand:#ff8a00;            /* laranja do sol */
+      --ink:#232a31;              /* cinza escuro do texto/logo */
+      --ink-2:#3a444e;
+      --bg:#ffffff;
+      --muted:#f7f7f8;
+      --accent:#ffe8cc;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink); background:var(--bg);}
+    img{max-width:100%; display:block}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1200px; margin:0 auto; padding:0 20px}
+
+    /* NAVBAR */
+    header{position:sticky; top:0; z-index:50; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    .navbar{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px}
+    .brand img{height:44px}
+    .brand strong{font-weight:700; letter-spacing:.5px}
+    .menu{display:flex; gap:26px; align-items:center}
+    .menu a{font-weight:500}
+    .menu a:hover{color:var(--brand)}
+    .cta{background:var(--brand); color:#fff; padding:10px 16px; border-radius:12px; font-weight:600; box-shadow:var(--shadow)}
+    .cta:hover{filter:brightness(.95)}
+
+    .hamb{display:none; border:none; background:transparent; font-size:28px}
+
+    /* HERO */
+    .hero{padding:72px 0 40px; display:grid; grid-template-columns:1.1fr .9fr; gap:36px; align-items:center}
+    .badge{display:inline-flex; gap:8px; align-items:center; background:var(--accent); color:#a95000; padding:6px 12px; border-radius:999px; font-weight:600; font-size:.9rem}
+    h1{font-size:clamp(32px, 5vw, 54px); margin:12px 0 8px}
+    .lead{font-size:clamp(15px, 2.3vw, 18px); color:var(--ink-2)}
+    .hero-cards{margin-top:26px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .card{background:var(--muted); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    .card small{color:#5c6773}
+
+    .hero-pic{position:relative}
+    .hero-pic .frame{border-radius:24px; overflow:hidden; box-shadow:0 25px 50px rgba(0,0,0,.12)}
+
+    /* SEÇÕES */
+    section{padding:64px 0}
+    .section-title{font-size:32px; margin:0 0 18px}
+    .grid{display:grid; gap:20px}
+
+    /* PRODUTOS */
+    .produtos{background:var(--muted)}
+    .cards-prod{grid-template-columns:repeat(auto-fit, minmax(220px, 1fr))}
+    .produto{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; display:flex; flex-direction:column; gap:10px}
+    .preco{font-weight:700; font-size:20px}
+    .comprar{margin-top:auto; background:var(--brand); color:#fff; border:none; padding:10px 14px; border-radius:12px; font-weight:600; cursor:pointer}
+    .comprar:hover{filter:brightness(.95)}
+
+    /* TRABALHOS */
+    .galeria{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .shot{border-radius:16px; overflow:hidden; box-shadow:var(--shadow)}
+
+    /* SOBRE */
+    .sobre{grid-template-columns:1.1fr .9fr; align-items:center}
+
+    /* CONTATO */
+    .contato{background:linear-gradient(180deg, #fff 0, #fff3e6 100%)}
+    .card-form{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:22px}
+    .form{display:grid; gap:12px}
+    .form input, .form textarea, .form select{width:100%; border:1.5px solid #e6e8eb; border-radius:12px; padding:12px 14px; font:inherit}
+    .form textarea{min-height:120px}
+    .whats{display:inline-flex; align-items:center; gap:10px; background:#25D366; color:#fff; padding:12px 16px; border-radius:12px; font-weight:700}
+
+    /* FOOTER */
+    footer{padding:28px 0; color:#607184}
+
+    /* RESPONSIVO */
+    @media (max-width: 980px){
+      .hero, .sobre{grid-template-columns:1fr}
+      .hero-pic{order:-1}
+    }
+    @media (max-width: 780px){
+      .menu{display:none}
+      .hamb{display:block}
+      .mobile{display:none; position:absolute; inset:64px 0 auto 0; background:#fff; box-shadow:0 10px 30px rgba(0,0,0,.1)}
+      .mobile a{display:block; padding:16px 20px; border-top:1px solid #f0f2f4}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="container navbar" role="navigation" aria-label="Principal">
+      <a href="#" class="brand">
+        <!-- Substitua o src abaixo pelo arquivo da sua logo: ex: logo-iluminus.png -->
+        <img src="iluminuslogo.png.png" alt="Iluminus Películas" />
+        <strong>ILUMINUS PELÍCULAS</strong>
+      </a>
+      <nav class="menu" aria-label="Seções">
+        <a href="#produtos">Películas</a>
+        <a href="#trabalhos">Nossos Trabalhos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato" class="cta">Fale Conosco</a>
+      </nav>
+      <button class="hamb" aria-label="Abrir menu" onclick="toggleMobile()">☰</button>
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+  <section class="hero container" id="inicio">
+    <div>
+      <span class="badge">☀︎ Conforto térmico • Privacidade • Proteção UV</span>
+      <h1>Películas que protegem, valorizam e transformam seu espaço</h1>
+      <p class="lead">Instalação profissional de películas residenciais, automotivas e comerciais em todo o RN. Atendimento ágil, materiais premium e garantia real.</p>
+
+      <div class="hero-cards">
+        <div class="card"><strong>99% UV</strong><br><small>Bloqueio de raios UVA/UVB</small></div>
+        <div class="card"><strong>+ Conforto</strong><br><small>Redução de calor e brilho</small></div>
+        <div class="card"><strong>Privacidade</strong><br><small>Sem perder luminosidade</small></div>
+      </div>
+
+      <p style="margin-top:22px">
+        <a class="whats" href="https://wa.me/558400000000?text=Oi%20Iluminus!%20Quero%20um%20or%C3%A7amento%20de%20pel%C3%ADculas." target="_blank" rel="noopener">💬 Pedir orçamento no WhatsApp</a>
+      </p>
+    </div>
+    <div class="hero-pic">
+      <div class="frame">
+        <img src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?q=80&w=1600&auto=format&fit=crop" alt="Aplicação de película em janela" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section id="produtos" class="produtos">
+    <div class="container">
+      <h2 class="section-title">Nossas Películas</h2>
+      <p class="lead">Selecionamos linhas com alta performance, garantia e excelente acabamento.</p>
+
+      <div class="grid cards-prod" style="margin-top:18px">
+        <article class="produto" aria-labelledby="p1">
+          <img src="https://images.unsplash.com/photo-1496302662116-35cc4f36df92?q=80&w=1200&auto=format&fit=crop" alt="Película espelhada" />
+          <h3 id="p1">Espelhada Prata</h3>
+          <p>Privacidade durante o dia e forte redução de calor.</p>
+          <div class="preco">R$ 59,90 <small>/ m²</small></div>
+          <button class="comprar" onclick="comprar('Espelhada Prata')">Solicitar orçamento</button>
+        </article>
+
+        <article class="produto" aria-labelledby="p2">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop" alt="Película fumê" />
+          <h3 id="p2">Fumê Premium</h3>
+          <p>Visual elegante com proteção UV de até 99%.</p>
+          <div class="preco">R$ 49,90 <small>/ m²</small></div>
+          <button class="comprar" onclick="comprar('Fumê Premium')">Solicitar orçamento</button>
+        </article>
+
+        <article class="produto" aria-labelledby="p3">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop" alt="Película jateada" />
+          <h3 id="p3">Jateada / Fosca</h3>
+          <p>Privacidade com passagem de luz para escritórios e banheiros.</p>
+          <div class="preco">R$ 54,90 <small>/ m²</small></div>
+          <button class="comprar" onclick="comprar('Jateada / Fosca')">Solicitar orçamento</button>
+        </article>
+
+        <article class="produto" aria-labelledby="p4">
+          <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?q=80&w=1200&auto=format&fit=crop" alt="Película de segurança" />
+          <h3 id="p4">Segurança 4/8/12mm</h3>
+          <p>Reforço contra estilhaços, ideal para vitrines e residências.</p>
+          <div class="preco">R$ 79,90 <small>/ m²</small></div>
+          <button class="comprar" onclick="comprar('Segurança 4/8/12mm')">Solicitar orçamento</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRABALHOS -->
+  <section id="trabalhos">
+    <div class="container">
+      <h2 class="section-title">Nossos Trabalhos</h2>
+      <p class="lead">Alguns registros de instalações feitas pela equipe Iluminus.</p>
+      <div class="grid galeria" style="margin-top:18px">
+        <div class="shot"><img src="https://images.unsplash.com/photo-1579632652768-5f1f48695fa3?q=80&w=1600&auto=format&fit=crop" alt="Vitrine com película"/></div>
+        <div class="shot"><img src="https://images.unsplash.com/photo-1600585153490-76fb20a32601?q=80&w=1600&auto=format&fit=crop" alt="Residência com película"/></div>
+        <div class="shot"><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1600&auto=format&fit=crop" alt="Escritório com película"/></div>
+        <div class="shot"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop" alt="Close na instalação"/></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="container sobre grid">
+      <div>
+        <h2 class="section-title">Sobre nós</h2>
+        <p class="lead">Somos especialistas em películas com foco em atendimento humano, acabamento de alto padrão e garantia de satisfação. Atendemos residências, comércios e veículos, com portfólio completo para cada necessidade.</p>
+        <ul>
+          <li>Equipe certificada e pontual;</li>
+          <li>Materiais selecionados de fabricantes referência;</li>
+          <li>Orçamento transparente e sem surpresa;</li>
+          <li>Garantia contra desbotamento e bolhas.</li>
+        </ul>
+      </div>
+      <div>
+        <img class="frame" style="border-radius:24px" src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1600&auto=format&fit=crop" alt="Equipe aplicando película"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="contato">
+    <div class="container">
+      <h2 class="section-title">Fale Conosco</h2>
+      <div class="grid" style="grid-template-columns:1fr 1fr; gap:26px">
+        <div class="card-form">
+          <form class="form" onsubmit="enviar(event)">
+            <input type="text" id="nome" placeholder="Seu nome" required>
+            <input type="tel" id="telefone" placeholder="WhatsApp" required>
+            <select id="tipo">
+              <option value="Película espelhada">Película espelhada</option>
+              <option value="Película fumê">Película fumê</option>
+              <option value="Película jateada">Película jateada</option>
+              <option value="Película de segurança">Película de segurança</option>
+            </select>
+            <textarea id="mensagem" placeholder="Conte rapidamente sua necessidade"></textarea>
+            <button class="cta" type="submit">Pedir orçamento</button>
+          </form>
+        </div>
+        <div>
+          <p class="lead">Preferiu direto no WhatsApp? Clique abaixo e fale com um especialista agora mesmo.</p>
+          <p><a class="whats" href="https://wa.me/558400000000?text=Oi%20Iluminus!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Abrir WhatsApp</a></p>
+          <p><strong>Atendimento:</strong> Seg a Sáb, 8h às 18h<br>
+          <strong>Região:</strong> RN e proximidades</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap">
+      <small>© <span id="year"></span> Iluminus Películas. Todos os direitos reservados.</small>
+      <small>Desenvolvido com a CodeNext e capricho.</small>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobile(){
+      const m = document.getElementById('mobile');
+      m.style.display = m.style.display === 'block' ? 'none' : 'block';
+    }
+    function comprar(nome){
+      const url = new URL('https://wa.me/558400000000');
+      const t = `Olá! Tenho interesse em ${nome}. Poderiam me enviar um orçamento?`;
+      url.searchParams.set('text', t);
+      window.open(url.toString(), '_blank');
+    }
+    function enviar(e){
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const tel = document.getElementById('telefone').value.trim();
+      const tipo = document.getElementById('tipo').value;
+      const msg = document.getElementById('mensagem').value.trim();
+      const texto = `Oi, sou ${nome}. Meu WhatsApp: ${tel}.\nQuero orçamento de: ${tipo}.\nDetalhes: ${msg}`;
+      const url = new URL('https://wa.me/558400000000');
+      url.searchParams.set('text', texto);
+      window.open(url.toString(), '_blank');
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
