@@ -39,6 +39,22 @@
             z-index: 10;
         }
 
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .hamburguer {
+            font-size: 28px;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            display: none; /* só aparece no celular */
+        }
+
         .itens-menu {
             list-style: none;
             margin: 0;
@@ -238,20 +254,23 @@
         }
 
         @media (max-width: 780px) {
-            .itens-menu {
-                flex-direction: column;
-                align-items: center;
+            .hamburguer {
+                display: block;
             }
 
-            .itens-menu a {
-                font-size: 14px;
-                padding: 8px 10px;
+            .itens-menu {
+                flex-direction: column;
                 width: 100%;
+                display: none; /* começa fechado */
+            }
+
+            .itens-menu li {
+                margin: 10px 0;
                 text-align: center;
             }
 
-            nav {
-                position: relative;
+            .itens-menu.show {
+                display: flex;
             }
         }
 
@@ -293,13 +312,16 @@
 
     <!-- MENU -->
     <nav>
-        <ul class="itens-menu">
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#produtos">Películas</a></li>
-            <li><a href="#trabalhos">Nossos Trabalhos</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#contato">Fale Conosco</a></li>
-        </ul>
+        <div class="menu-container">
+            <button class="hamburguer" id="btnMenu">&#9776;</button>
+            <ul class="itens-menu" id="menuItens">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#produtos">Películas</a></li>
+                <li><a href="#trabalhos">Nossos Trabalhos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Fale Conosco</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- HERO -->
@@ -403,6 +425,14 @@
             const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
             window.open(url, "_blank");
         }
+
+        // SCRIPT DO MENU HAMBÚRGUER
+        const btnMenu = document.getElementById("btnMenu");
+        const menuItens = document.getElementById("menuItens");
+
+        btnMenu.addEventListener("click", () => {
+            menuItens.classList.toggle("show");
+        });
     </script>
 
 </body>
