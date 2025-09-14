@@ -31,18 +31,18 @@ header img {
     margin: 0 auto;
 }
 
+/* NAVBAR */
 nav {
     background-color: #000000f1;
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 10px 20px;
+    padding: 5px 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
-/* MENU DESKTOP E MOBILE */
 .itens-menu {
     list-style: none;
     margin: 0;
@@ -53,9 +53,7 @@ nav {
     transition: max-height 0.4s ease;
 }
 
-.itens-menu li {
-    margin: 5px 15px;
-}
+.itens-menu li { margin: 5px 15px; }
 
 .itens-menu a {
     color: #fff;
@@ -67,75 +65,102 @@ nav {
     cursor: pointer;
 }
 
-.itens-menu a:hover {
-    background-color: #007BFF;
-    border-radius: 5px;
-}
+.itens-menu a:hover { background-color: #007BFF; border-radius: 5px; }
 
-/* Ícone hambúrguer */
 .menu-mobile {
     display: none;
-    font-size: 36px;
+    font-size: 32px;
     cursor: pointer;
     user-select: none;
     color: #fff;
-    padding: 5px 0;
 }
 
-/* RESPONSIVO */
 @media (max-width: 780px) {
-    .menu-mobile {
-        display: block;
-    }
+    .menu-mobile { display: block; }
     .itens-menu {
         flex-direction: column;
         position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
+        top: 55px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
         background-color: #000000f1;
         max-height: 0;
         overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(38,0,255,0.37);
     }
-    .itens-menu.show {
-        max-height: 500px; /* altura suficiente para todos os itens */
-    }
-    .itens-menu li {
-        margin: 10px 0;
-        text-align: center;
-    }
-    .itens-menu a {
-        padding: 8px 12px;
-        font-size: 0.95rem;
-    }
+    .itens-menu.show { max-height: 500px; }
+    .itens-menu li { margin: 10px 0; text-align: center; }
+    .itens-menu a { padding: 8px 12px; font-size: 0.95rem; }
 }
 
-/* Animação do hambúrguer */
-.hamburger {
+.hamburger { display: inline-block; cursor: pointer; transition: transform 0.3s ease; }
+.hamburger.active { transform: rotate(90deg); }
+
+/* CONTEÚDO */
+.content { max-width: 1100px; margin: auto; padding: 20px 15px; }
+section { margin: 40px 0; text-align: center; }
+
+/* VIDEO */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* H1 com sombra suave */
+h1 {
     display: inline-block;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 90px;
+    box-shadow: 0 8px 24px rgba(0, 119, 255, 0.65);
+    background: #0b3e66;
 }
 
-.hamburger.active {
-    transform: rotate(90deg);
-}
-
-/* RESTANTE DO CSS */
-.content {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px 15px;
-}
-
-section {
-    margin: 50px 0;
-}
-
-.video-container {
-    max-width: 800px;
-    margin: auto;
+/* BOTÕES */
+.playstore-btn {
+    display: inline-block;
+    padding: 18px 36px;
+    border-radius: 12px;
+    background-color: #25D366;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 20px auto 10px auto;
     text-align: center;
+    box-shadow: 0 0 10px #25D366, 0 0 20px #25D366, 0 0 30px #25D366;
+    transition: 0.3s, box-shadow 0.5s ease-in-out;
+    font-size: 1.1rem;
+}
+
+.playstore-btn:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 0 20px #25D366, 0 0 40px #25D366, 0 0 60px #25D366;
+}
+
+.playstore-btn .emoji {
+    display: inline-block;
+    animation: bounce 1s infinite;
+    margin-right: 8px;
+    transform-origin: bottom center;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-12px); }
+    60% { transform: translateY(-6px); }
 }
 
 .voltar-btn {
@@ -147,21 +172,90 @@ section {
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
-    margin-top: 20px;
+    margin-top: 10px;
     transition: 0.3s;
 }
 
-.voltar-btn:hover {
-    filter: brightness(0.9);
-}
+.voltar-btn:hover { filter: brightness(0.9); }
 
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 15px;
-    background: #000;
-    border-top: 1px solid #222;
-    margin-top: 40px;
+    padding: 20px;
+    background-color: #0a2a43;
+    color: white;
+    margin-top: 30px;
 }
+
+/* DISTÂNCIA ENTRE h2 E WPP.GOOD */
+h2 {
+    margin-top: 60px; /* maior espaçamento */
+}
+
+/* BOX WPP.GOOD */
+.wpp-good {
+    background: #007BFF80; /* azul claro */
+    padding: 25px 30px; /* maior padding */
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 119, 255, 0.5);
+    max-width: 400px; /* maior largura */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-self: center; /* centraliza no grid desktop */
+    margin: 0 auto; /* centraliza horizontalmente */
+}
+
+.wpp-good input,
+.wpp-good select {
+    width: 80%; /* maior largura */
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+}
+
+.wpp-good .whatsapp-btn {
+    padding: 12px 20px;
+    font-size: 1.05rem;
+    text-align: center;
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+/* VIDEO + BOTÕES + WPP.GOOD */
+.video-e-botoes-wpp {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    align-items: start;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.botao-voltar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 780px) {
+    .video-e-botoes-wpp {
+        grid-template-columns: 1fr;
+        margin-top: 10px;
+        justify-items: center; /* centraliza tudo no mobile */
+    }
+    .wpp-good {
+        margin-left: 0;
+        margin-top: 20px;
+        max-width: 100%;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -184,38 +278,62 @@ footer {
 </nav>
 
 <main class="content">
-    <section id="video">
-        <div class="video-container">
-            <h2>🎥 Vídeo Tutorial</h2>
-            <p>Acompanhe nosso vídeo de apresentação, mostrando como usar nosso aplicativo</p>
-            <video width="100%" controls>
+    <section id="video">   
+        <h1>Orçamento remoto</h1>
+        <h3><strong> ATENÇÃO!! </strong> Caso o/a senhor(a) tenha uma trena em casa, não será preciso assistir o vídeo tutorial logo a baixo, basta preencher o formulário e solicitar seu orçamento </h3>
+        <p><strong> Caso nao tenha uma trena, assista o vídeo no final da página para saber como instalar e usar um aplicativo de metragem </strong></p>
+        
+        <div class="wpp-good">
+            <h3>📏 Solicite seu orçamento</h3>
+            <input type="text" id="altura" placeholder="Altura (cm)">
+            <input type="text" id="largura" placeholder="Largura (cm)">
+            <select id="pelicula">
+                <option value="">Selecione a película</option>
+                <option value="Nano cerâmica">Nano cerâmica</option>
+                <option value="Fumê 70% a blackout">Fumê 70% a blackout</option>
+                <option value="Jateada / Fosca">Jateada / Fosca</option>
+                <option value="Espelhada">Espelhada</option>
+            </select>
+            <a href="#" class="whatsapp-btn" onclick="enviarWhatsApp()">💬 Solicitar orçamento pelo WhatsApp</a>
+        </div>
+
+        <h2>🎬 Vídeo tutorial</h2>
+        
+        <div class="video-wrapper">
+            <video controls>
                 <source src="video.mp4" type="video/mp4">
                 Seu navegador não suporta vídeos em HTML5.
             </video>
-            <a href="index.html" class="voltar-btn">⬅ Voltar</a>
         </div>
+
+        <div class="video-e-botoes-wpp">
+            <div class="botao-voltar-container">
+                <a href="https://play.google.com/store/apps/details?id=com.grymala.aruler" target="_blank" class="playstore-btn">
+                    <span class="emoji">📲</span> Baixar aplicativo na Play Store
+                </a>
+                <a href="index.html" class="voltar-btn">⬅ Voltar para página inicial</a>
+            </div>
+        </div>
+
     </section>
 </main>
 
 <footer>
-    © 2025 Iluminus Películas & CodeNext - Todos os direitos reservados.
+    &copy; 2025 Iluminus Películas & CodeNext - Todos os direitos reservados.
 </footer>
 
 <script>
 const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 
-// Garante que o menu inicia fechado
 menu.classList.remove('show');
 hamburger.classList.remove('active');
 
-// Toggle menu ao clicar no hambúrguer
 hamburger.addEventListener('click', () => {
     menu.classList.toggle('show');
     hamburger.classList.toggle('active');
 });
 
-// Fechar menu ao clicar em um link (mobile)
 menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         if(window.innerWidth <= 780) {
@@ -223,6 +341,28 @@ menu.querySelectorAll('a').forEach(link => {
             hamburger.classList.remove('active');
         }
     });
+});
+
+// WhatsApp orçamento
+function enviarWhatsApp() {
+    const altura = document.getElementById('altura').value;
+    const largura = document.getElementById('largura').value;
+    const pelicula = document.getElementById('pelicula').value;
+    const numero = "5584998324092";
+
+    let mensagem = `Olá! Gostaria de solicitar um orçamento.\n\n📐 Medidas:\n- Altura: ${altura} cm\n- Largura: ${largura} cm\n\n✨ Película escolhida: ${pelicula}`;
+    let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(url, '_blank');
+}
+
+// Seleciona a película via URL
+window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const peliculaSelecionada = params.get('pelicula');
+    if (peliculaSelecionada) {
+        document.getElementById('pelicula').value = peliculaSelecionada;
+    }
 });
 </script>
 
