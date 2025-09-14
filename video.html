@@ -187,30 +187,27 @@ footer {
     margin-top: 30px;
 }
 
-/* DISTÂNCIA ENTRE h2 E WPP.GOOD */
-h2 {
-    margin-top: 60px; /* maior espaçamento */
-}
-
 /* BOX WPP.GOOD */
 .wpp-good {
-    background: #007BFF80; /* azul claro */
-    padding: 25px 30px; /* maior padding */
+    background: #007BFF80; 
+    padding: 15px;
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0, 119, 255, 0.5);
-    max-width: 400px; /* maior largura */
-    width: 100%;
+    max-width: 320px; /* ajustado para não ficar gigante */
     display: flex;
     flex-direction: column;
     gap: 12px;
-    justify-self: center; /* centraliza no grid desktop */
-    margin: 0 auto; /* centraliza horizontalmente */
+    margin: 0 auto; 
+}
+
+.wpp-good h3 {
+    margin-bottom: 12px; /* espaçamento maior do título */
 }
 
 .wpp-good input,
 .wpp-good select {
-    width: 80%; /* maior largura */
-    padding: 10px 12px;
+    width: 90%; /* inputs maiores e proporcionais */
+    padding: 10px;
     font-size: 1rem;
     border-radius: 8px;
     border: none;
@@ -241,21 +238,20 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px; /* espaçamento entre botões */
 }
 
 @media (max-width: 780px) {
     .video-e-botoes-wpp {
         grid-template-columns: 1fr;
         margin-top: 10px;
-        justify-items: center; /* centraliza tudo no mobile */
+        justify-items: center;
     }
     .wpp-good {
-        margin-left: 0;
+        max-width: 95%;
         margin-top: 20px;
-        max-width: 100%;
     }
 }
-
 </style>
 </head>
 <body>
@@ -280,8 +276,8 @@ h2 {
 <main class="content">
     <section id="video">   
         <h1>Orçamento remoto</h1>
-        <h3><strong> ATENÇÃO!! </strong> Caso o/a senhor(a) tenha uma trena em casa, não será preciso assistir o vídeo tutorial logo a baixo, basta preencher o formulário e solicitar seu orçamento </h3>
-        <p><strong> Caso nao tenha uma trena, assista o vídeo no final da página para saber como instalar e usar um aplicativo de metragem </strong></p>
+        <h3><strong>ATENÇÃO!!</strong> Caso o/a senhor(a) tenha uma trena em casa, não será preciso assistir o vídeo tutorial logo a baixo, basta preencher o formulário e solicitar seu orçamento </h3>
+        <p><strong>Caso não tenha uma trena, assista o vídeo no final da página para saber como instalar e usar um aplicativo de metragem</strong></p>
         
         <div class="wpp-good">
             <h3>📏 Solicite seu orçamento</h3>
@@ -297,7 +293,7 @@ h2 {
             <a href="#" class="whatsapp-btn" onclick="enviarWhatsApp()">💬 Solicitar orçamento pelo WhatsApp</a>
         </div>
 
-        <h2>🎬 Vídeo tutorial</h2>
+        <h2 style="margin-top: 30px;">🎬 Vídeo tutorial</h2>
         
         <div class="video-wrapper">
             <video controls>
