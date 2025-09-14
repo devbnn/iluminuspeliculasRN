@@ -6,7 +6,6 @@
 <title>Iluminus Películas</title>
 <meta name="description" content="Venda e instalação de películas residenciais e comerciais no RN. Qualidade, garantia e atendimento rápido." />
 
-<!-- Fonte Google -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -15,7 +14,7 @@ body {
     margin: 0;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     background-color: #000;
-    color: #ffffff;
+    color: #fff;
 }
 
 .content {
@@ -54,12 +53,12 @@ nav {
     user-select: none;
 }
 
-/* MENU PRINCIPAL - desktop */
+/* MENU DESKTOP */
 .itens-menu {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* desktop: flex horizontal */
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -104,9 +103,10 @@ nav {
         z-index: 100;
         box-shadow:
             0 10px 30px rgba(38, 0, 255, 0.37),
-            0 10px 30px rgba(38, 0, 255, 0.37),
-            0 10px 30px rgba(38, 0, 255, 0.37);
-        transition: opacity 0.4s ease, transform 0.4s ease;
+            0 -10px 30px rgba(38, 0, 255, 0.37),
+            10px 0 30px rgba(38, 0, 255, 0.37),
+            -10px 0 30px rgba(38, 0, 255, 0.37);
+        transition: opacity 0.5s ease, transform 0.5s ease;
     }
 
     .itens-menu.show {
@@ -118,14 +118,16 @@ nav {
     .itens-menu li {
         margin: 10px 0;
         text-align: center;
-        transform: translateY(10px);
+        transform: translateY(20px) scale(0.95);
         opacity: 0;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.5s ease;
+        border-radius: 8px;
     }
 
     .itens-menu.show li {
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
         opacity: 1;
+        
     }
 
     .itens-menu li:nth-child(1) { transition-delay: 0.05s; }
@@ -451,8 +453,18 @@ hamburger.addEventListener('click', () => {
     menu.classList.toggle('show');
     hamburger.classList.toggle('active');
 });
+
+// Fecha menu mobile automaticamente ao clicar em qualquer link
+const menuLinks = document.querySelectorAll('.itens-menu a');
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if(window.innerWidth <= 780){
+            menu.classList.remove('show');
+            hamburger.classList.remove('active');
+        }
+    });
+});
 </script>
 
 </body>
 </html>
-
